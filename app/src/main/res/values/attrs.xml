@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomBottomSheetView">
+        <attr name="view_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="CustomSolidArc">
+        <attr name="CustomSolidArc_color" format="color"/>
+        <attr name="set_schedule" format="string"/>
+
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,718 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimaryDark"
+        >
+
+    </androidx.appcompat.widget.Toolbar>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/upper_part"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        app:layout_constraintVertical_bias="0.5"
+
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_margin="10dp"
+
+
+
+        >
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/doctor"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+
+
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Dr.FEKKAK Abderrahim"
+
+            android:textColor="#505050"
+
+            android:textSize="24sp"
+
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_photo"
+            android:layout_marginTop="5dp"
+
+
+            />
+
+
+        <TextView
+            android:id="@+id/profession"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Dentiste"
+            android:textColor="#909090"
+
+            android:textSize="18sp"
+
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            android:layout_marginTop="3dp"
+
+
+
+
+            />
+        <RatingBar
+            android:id="@+id/rating"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:stepSize="0.1"
+
+
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profession"
+            android:layout_marginTop="3dp"
+
+
+            />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rating"
+            android:layout_marginTop="3dp"
+
+            >
+
+
+
+            <ImageView
+                android:id="@+id/logo_clock"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:src="@drawable/ic_stopwatch"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:baselineAlignBottom="true"
+                app:layout_constraintBaseline_toBaselineOf="@id/closing_at"
+                />
+
+            <TextView
+                android:id="@+id/closing_at"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:text="Ferme à 18h00"
+                android:textColor="#909090"
+
+                android:textSize="@dimen/medium"
+
+
+                app:layout_constraintLeft_toRightOf="@id/logo_clock"
+
+                app:layout_constraintTop_toTopOf="parent"
+
+
+                />
+            <TextView
+                android:id="@+id/afficher_horaire"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+
+                android:text="Afficher horaire"
+                android:textColor="@color/app_color_theme"
+
+                android:textSize="@dimen/medium"
+
+
+                app:layout_constraintLeft_toRightOf="@id/closing_at"
+
+                app:layout_constraintTop_toTopOf="parent"
+                android:onClick="afficher_horaire"
+
+
+                />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        android:layout_marginTop="@dimen/items_gap"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/home"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/ic_home"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:baselineAlignBottom="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/address1"
+
+            />
+
+        <TextView
+            android:id="@+id/address1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:text="50, BD OUM RABII, ETAGE 1,"
+            android:textColor="#505050"
+
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintLeft_toRightOf="@id/home"
+
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            />
+        <TextView
+            android:id="@+id/address2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:text="El Oulfa, CASABLANCA"
+            android:textColor="#505050"
+
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintLeft_toRightOf="@id/home"
+
+            app:layout_constraintTop_toBottomOf="@id/address1"
+
+
+            />
+        <TextView
+            android:id="@+id/afficher_carte"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+
+            android:text="Afficher carte"
+            android:textColor="@color/app_color_theme"
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="afficher_carte"
+
+
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_color_theme"
+            app:layout_constraintTop_toBottomOf="@id/address2"
+            android:layout_marginTop="@dimen/line_separator_margin_top"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/queue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_bottom"
+        android:layout_marginTop="@dimen/items_gap"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/wait"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/ic_wait"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:baselineAlignBottom="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/queue_people"
+            />
+
+        <TextView
+            android:id="@+id/queue_people"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:text="5 Personnes en attente,
+"
+            android:textColor="#505050"
+
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintLeft_toRightOf="@id/wait"
+
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            />
+        <TextView
+            android:id="@+id/queue_time"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:text="Durée estimée à 2h15min"
+            android:textColor="#505050"
+
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintLeft_toRightOf="@id/wait"
+
+            app:layout_constraintTop_toBottomOf="@id/queue_people"
+
+
+            />
+        <TextView
+            android:id="@+id/statistics"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+
+            android:text="Statistiques"
+            android:textColor="@color/app_color_theme"
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:onClick="showStatisctics"
+
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_color_theme"
+            app:layout_constraintTop_toBottomOf="@id/queue_time"
+            android:layout_marginTop="@dimen/line_separator_margin_top"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/cost_logo"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:src="@drawable/coin"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:baselineAlignBottom="true"
+            app:layout_constraintBaseline_toBaselineOf="@id/standard_cost"
+            />
+
+        <TextView
+            android:id="@+id/standard_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+            android:text="Tarif standard: 200 Dh"
+            android:textColor="#505050"
+
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintLeft_toRightOf="@id/cost_logo"
+
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            />
+
+        <TextView
+            android:id="@+id/extra_cost"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="5dp"
+
+            android:text="Tarifs/promotions"
+            android:textColor="@color/app_color_theme"
+
+            android:textSize="@dimen/medium"
+
+
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/app_color_theme"
+            app:layout_constraintTop_toBottomOf="@id/standard_cost"
+            android:layout_marginTop="@dimen/line_separator_margin_top"
+            />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/cd"
+        >
+
+        <com.ma.toothapplication.CustomBottomSheetView
+            android:id="@+id/custom_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5"
+            app:view_color="@color/app_color_theme"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+            app:behavior_peekHeight="100dp"
+
+            android:onClick="expand"
+            >
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RDV"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="15dp"
+
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+
+                />
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/bottom_sheet_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/app_color_theme"
+                app:title="Programmer un rendez-vous"
+                app:titleTextColor="#ffffff"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/top_guide_line_bottom_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3"
+                />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/bottom_guide_line_bottom_sheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="1"
+                />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginRight="0dp"
+
+
+
+                app:layout_constraintTop_toBottomOf="@id/top_guide_line_bottom_sheet"
+                app:layout_constraintBottom_toTopOf="@id/bottom_guide_line_bottom_sheet"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                app:layout_constraintVertical_bias="0.5"
+                app:layout_constraintHorizontal_bias="0.5"
+
+                >
+
+
+
+                <androidx.cardview.widget.CardView
+
+                    android:id="@+id/cv"
+                    android:animateLayoutChanges="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+
+                    app:cardBackgroundColor="#ffffff"
+                    app:cardCornerRadius="3dp"
+                    app:cardElevation="3dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true"
+
+                    app:layout_constraintTop_toTopOf="parent"
+
+
+
+                    >
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/card_header"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/app_color_theme"
+                            android:padding="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            >
+
+                            <TextView
+                                android:id="@+id/day"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Mercredi"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+
+
+                                />
+
+                            <TextView
+                                android:id="@+id/date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12-10-2019"
+                                android:textColor="#ffffff"
+                                android:textSize="15sp"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/day"
+
+
+                                />
+                            <TextView
+                                android:id="@+id/hour"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="08"
+                                android:textColor="#ffffff"
+                                android:textSize="50sp"
+
+                                app:layout_constraintBaseline_toBaselineOf="@id/date"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                app:layout_constraintRight_toLeftOf="@+id/mice"
+
+
+                                android:nextFocusRight="@id/minute"
+                                />
+
+                            <TextView
+                                android:id="@+id/mice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=":"
+                                android:textColor="#ffffff"
+                                android:textSize="50sp"
+
+                                app:layout_constraintBaseline_toBaselineOf="@id/date"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                app:layout_constraintRight_toLeftOf="@+id/minute"
+
+
+                                />
+                            <TextView
+                                android:id="@+id/minute"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="30"
+                                android:textColor="#ffffff"
+                                android:textSize="50sp"
+
+                                app:layout_constraintBaseline_toBaselineOf="@id/date"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                app:layout_constraintRight_toRightOf="parent"
+
+
+                                />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        <ImageView
+                            android:id="@+id/clock"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            app:layout_constraintDimensionRatio="1:1"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/clock"
+                            app:layout_constraintTop_toBottomOf="@+id/card_header"
+                            android:padding="10dp"
+
+                            />
+
+                        <com.ma.toothapplication.CustomSolidArc
+                            android:id="@+id/csa"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+
+                            app:set_schedule="8,9,10,11"
+                            app:CustomSolidArc_color="@color/app_color_theme"
+
+                            app:layout_constraintDimensionRatio="1:1"
+                            app:layout_constraintHorizontal_bias="0.5"
+                            app:layout_constraintLeft_toRightOf="@+id/clock"
+                            app:layout_constraintRight_toLeftOf="@+id/clock"
+                            app:layout_constraintTop_toBottomOf="@+id/clock"
+                            app:layout_constraintBottom_toTopOf="@+id/clock"
+                            app:layout_constraintVertical_bias="0.5"
+
+                            />
+                        <TextView
+                            android:id="@+id/ok"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintRight_toRightOf="parent"
+                            android:layout_marginTop="10dp"
+                            android:text="OK"
+                            android:textColor="@color/app_color_theme"
+                            android:textSize="15sp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="20dp"
+                            app:layout_constraintTop_toBottomOf="@+id/clock"
+                            app:layout_constraintBottom_toBottomOf="parent"
+
+
+
+
+                            />
+                        <TextView
+                            android:id="@+id/annuler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintRight_toLeftOf="@+id/ok"
+                            app:layout_constraintTop_toBottomOf="@+id/clock"
+                            android:layout_marginTop="10dp"
+
+                            android:text="ANNULER"
+                            android:textColor="@color/app_color_theme"
+                            android:textSize="15sp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="20dp"
+
+
+                            />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.ma.toothapplication.CustomBottomSheetView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
